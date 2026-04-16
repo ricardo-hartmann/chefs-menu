@@ -1,0 +1,63 @@
+  <!-- Cabeçalho da página -->
+  <div class="mb-4">
+    <h1 class="fw-bold">Cardápio em destaque</h1>
+    <p class="text-muted">Filtre e explore os melhores sabores da cidade</p>
+    <hr />
+  </div>
+
+    <!--
+    Painel de Filtros: Formulário usando Bootstrap 5 Card.
+    - card, card-body: Cria um painel de filtragem visualmente separado
+    - [formGroup]: Vincula ao objeto FormGroup do TypeScript
+    - (ngSubmit): Chama applyFilters() ao clicar em "Filtrar"
+  -->
+  <div class="card mb-4 bg-light border-0">
+    <div class="card-body">
+      <h5 class="card-title mb-3">🔍 Filtros</h5>
+      <form>
+        <div class="row g-3 align-items-end">
+
+          <!-- Filtro por Nome -->
+          <div class="col-md-4">
+            <label for="filterName" class="form-label">Nome do prato</label>
+            <input
+              type="text"
+              class="form-control"
+              id="filterName"
+              formControlName="name"
+              placeholder="Ex: Salada, Hambúrger..."
+            />
+          </div>
+
+          <!-- Filtro por Ingresso (select com opções fixas) -->
+          <div class="col-md-3">
+            <label for="filterTicket" class="form-label">Tipo</label>
+            <select class="form-select" id="filterTicket" formControlName="requires_ticket">
+              <option value="">Todos</option>
+              <option value="true">Entrada</option>
+              <option value="false">Prato Principal</option>
+              <option value="false">Sobremesa</option>
+              <option value="false">Bebida</option>
+            </select>
+          </div>
+
+
+
+          <!-- Botão de Filtrar -->
+          <div class="col-md-2">
+            <button type="submit" class="btn btn-primary w-100">
+              Filtrar
+            </button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+<!-- <div>
+    <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Aqui vai entrar a parte do Filtro" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+</div> -->
