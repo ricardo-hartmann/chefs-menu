@@ -2,7 +2,7 @@
     <!-- <img class="card-img-top" src="holder.js/100x180/" alt="Title" /> -->
     <div class="card-body">
         <h4 class="card-title">Login</h4>
-        <form action="">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
             <div class="mb-3">
                 <label for="email" class="form-label">E-mail</label>
@@ -12,7 +12,7 @@
                     id="email"
                     class="form-control"
                     placeholder="Digite o seu e-mail"
-                />
+                    formControlName="email" />
             </div>
 
             <div class="mb-3">
@@ -23,7 +23,7 @@
                     id="senha"
                     class="form-control"
                     placeholder="Digite sua senha"
-                />
+                    formControlName="password" />
             </div>
 
             <div class="mb-3">

@@ -10,12 +10,12 @@
             <a class="nav-link" [routerLink]="['/home']">Home</a>
           </li>
 
-          @if (false) {
+          @if (authService.estaLogado()) {
             <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/admin/dashboard']">Dashboard</a>
             </li>
             <li class="nav-item">
-                <button class="btn text-danger">Sair</button>
+                <button class="btn text-danger" (click)="authService.logout()">Sair</button>
             </li>
           }
           @else {
@@ -27,4 +27,3 @@
       </div>
     </div>
   </nav>
-  <div class="navbar-spacer"></div>

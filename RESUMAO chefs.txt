@@ -1,0 +1,58 @@
+Comandos:
+
+npx @angular/cli new fitness-hub --style=css --routing
+
+cardápio digital
+
+1) Adicionar Bootstrap cdn no index.html (CSS + bundle)
+2) Pegar NavBar do Bootstrap
+3) Configurar app-routes
+4) Em app.html, apagar tudo menos <router-outlet />
+5) Em NavBar - me-auto para ajustar o menu
+6) Fazer a verificação if/else no NavBar
+!IMPORTANTE: Deixar o valor true para não dar erro, porque ainda não temos configuração
+7) Router Link no navbar
+8) Na página de login, extensão Bootstrap 5 quicksnip~, digitar bs5-form-group
+9) app-config: provideRouter(routes, withHashLocation())
+   provideHttpClient
+10) Conigurar o Serv/Auth. Private http, router, api.
+11) Ainda no services, configurar token, login, etc. (pipe/tap)
+12) Em login.ts, criar as privates authService / router com inject().
+loginForm = new FormGroup > email e password com FormControl além do ReactiveFormsModule
+OBS.: Padrão FormGroup (é o grupo de inputs, o formulário literalmente). FormControl = inputs basicamente
+13) login.html: na tag <form> apaga action e coloca formGroup="loginForm" ou [formGroup]="loginForm".
+14) em Auth.ts: Funções login, logout, isLoggedIn, getToken.
+OBS.: o this puxa a private lá de cima
+15) navbar.ts: 	public authService = inject(Auth)
+16) Configurar o if/else do navbar.html: @if(authService.estalogado()){} else@ {}
+Configurar o logout: (click)="authService.logout()" no button "Sair".
+17) app.routes.ts: adicionar o canActivate[authGuards].
+18) em auth-guards.ts: configurar as variáveis
+
+private dentro do próprio arquivo
+public entre arquivos (tipo classe)
+const usamos no Guard, porque não é class
+
+
+
+Extras:
+Se der, fazer a parte do erro do código em caso de falha de login.
+Personalizar Login, colocar logo, ver cores.
+Design original, diferenciado porém limpo e objetivo.
+
+*) https://api-senai-angular.vercel.app/api/dishes
+admin@shaghai.com
+admin123
+
+*) GitHub > code > copiar link.
+VSCode > New Window > Clone Git repository
+
+Funcionalidades:
+- Tela de login com rota protegida: Acesso restrito para administradores do restaurante.
+- CRUD de pratos: Gerenciar nome, categoria, descrição, preço e disponibilidade.
+- Alternância de disponibilidade: Marcar/desmarcar um prato como "Indisponível" via toggle.
+- Validação ao cadastrar: Impedir preço zerado ou campos obrigatórios vazios.
+- Tela pública: Cardápio digital otimizado para visualização mobile.
+
+--------------------------------------------------------------------------------------------------------------
+
