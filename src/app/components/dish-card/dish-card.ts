@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Dish } from '../../models/dish';
 
 @Component({
   selector: 'app-dish-card',
@@ -6,4 +7,11 @@ import { Component } from '@angular/core';
   templateUrl: './dish-card.html',
   styleUrl: './dish-card.css',
 })
-export class DishCard {}
+export class DishCard {
+  menu = input.required<Dish>();
+  
+  pedido() {
+    alert("Seu pedido está sendo preparado!")
+  }
+
+}

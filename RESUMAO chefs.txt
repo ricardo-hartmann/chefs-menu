@@ -28,6 +28,10 @@ OBS.: o this puxa a private lá de cima
 Configurar o logout: (click)="authService.logout()" no button "Sair".
 17) app.routes.ts: adicionar o canActivate[authGuards].
 18) em auth-guards.ts: configurar as variáveis
+19) menu-public.ts: 'signal' é uma variável e tb função, recarrega rápido, de forma rápida sem precisar ficar dando f5.
+20) menu-public.html: spinner, if, else if, <appdishcard> etc.
+21) dish.ts: criar models/dish e configurar a ordem de cadastro de acordo com os dados da api
+22) dish-card.html: bs5-card-default (Card do Bootstrap)
 
 private dentro do próprio arquivo
 public entre arquivos (tipo classe)
