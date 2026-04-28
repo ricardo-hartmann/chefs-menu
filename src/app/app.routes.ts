@@ -6,12 +6,13 @@ import { DishForm } from './pages/admin/dish-form/dish-form';
 import { authGuard } from './guards/auth-guard';
 
 export const routes: Routes = [
-    {path: "", redirectTo: "home", pathMatch: 'full'},
-    {path: "login", component: Login},
-    {path: "home", component: MenuPublic},
+    {path: '', redirectTo: 'home', pathMatch: 'full'},
+    {path: 'login', component: Login},
+    {path: 'home', component: MenuPublic},
     
-    {path: "admin", canActivate:[authGuard], children:[
-        {path: "dashboard", component: Dashboard},
-        {path: "dish-form", component: DishForm},
-    ]},
+    {path: 'admin', canActivate:[authGuard], children: [
+        {path: 'dashboard', component: Dashboard},
+        {path: 'dishes', component: DishForm},
+        {path: 'dishes/:id', component: DishForm}
+    ]}
 ];

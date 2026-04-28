@@ -1,4 +1,4 @@
-<section class="p-4">
+<!-- <section class="p-4">
 <h2 class="fw-bold mb-4">📋 Gerenciar Pratos e Refeições</h2>
 <div class="card mb-4">
     <div class="card-header bg-primary text-white fw-semibold">
@@ -19,5 +19,41 @@
         </thead>
     </table>
 </div>
+
+</section> -->
+
+
+<section class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4 mt-4">
+        <h2>🍽 Pratos cadastrados</h2>
+        <a class="btn btn-primary" [routerLink]="['/admin/dishes']">Novo prato</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Disponibilidade</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (prato of pratos(); track $index) {
+                <tr class="">
+                    <td scope="row">{{prato.name}}</td>
+                    <td>{{prato.category}}</td>
+                    <td>{{prato.price}}</td>
+                    <td>{{prato.available ? '✅' : '❎'}}</td>
+                    <td>
+                        <a class="btn btn-warning" [routerLink]="[`/admin/dishes/${prato.id}`]">Editar</a>
+                        <button class="btn btn-danger ms-2" (click)="deletar(prato.id)">Deletar</button>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 
 </section>

@@ -1,10 +1,12 @@
 export interface Dish {
     id: number;
+
     name: string;
-    category: string;
     price: number;
     description?: string;
     available: boolean;
+    category: string;
+
     created_at?: Date | string;
     updated_at?: Date | string;
     }
